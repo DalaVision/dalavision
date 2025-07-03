@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DalaVision</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #111; }
+    header, footer { background: #fff; padding: 20px 40px; text-align: center; }
+    nav a { margin: 0 15px; text-decoration: none; color: #00784e; font-weight: bold; }
+    section { padding: 60px 40px; text-align: center; }
+    img { max-width: 100%; height: auto; border-radius: 12px; }
+    .module { max-width: 1000px; margin: 0 auto 60px; }
+    .module h2 { font-size: 28px; margin-bottom: 20px; }
+    .module p { font-size: 17px; color: #444; line-height: 1.6; }
+    .iframe-container iframe { width: 100%; height: 600px; border: none; margin-top: 30px; }
+    .video-link a { color: #00784e; font-weight: bold; }
+  
+    html {
+      scroll-behavior: smooth;
+    }
+    .module {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .module.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    </style>
+    
+</head>
+<body>
+
+<header>
+  <h1>DalaVision — Цифровая платформа для агроаналитики</h1>
+  <nav>
+    <a href="#crop">Crop</a>
+    <a href="#one">One</a>
+    <a href="#sensors">Sensors</a>
+    <a href="#demo">Демо</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section class="module" id="one">
+  <h2>📷 Dalavision One</h2>
+  <img src="dalavision-one.png" alt="Dalavision One">
+  <p>AI-модуль анализа урожая. Система распознаёт зрелость ягод, недобор в крайних рядах и оценивает количество плодов по видео и фото с теплиц. Информация автоматически поступает в дашборд. <br/>
+  <span class="video-link"><a href="https://youtu.be/8tOP1jLWv90" target="_blank">Посмотреть как работает анализ видео →</a></span></p>
+</section>
+
+<section class="module" id="crop">
+  <h2>🌱 Dalavision Crop</h2>
+  <img src="dalavision-crop.png" alt="Dalavision Crop">
+  <p>Введите координаты участка — и получите список культур, которые можно посадить с учётом климата, pH почвы и уровня солнечного освещения (DLI).<br/>
+  Предоставляется подробный отчёт с рекомендациями и контактами ближайших поставщиков семян, саженцев и удобрений.</p>
+</section>
+
+
+<section class="module" id="sensors" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+  <div style="flex: 1 1 300px; max-width: 400px;">
+    <img src="dalavision-sensors.png" alt="Dalavision Sensors" style="width: 100%; border-radius: 8px; box-shadow: 0 0 12px rgba(0,0,0,0.1);">
+  </div>
+  <div style="flex: 1 1 400px; max-width: 500px;">
+    <h2>🌦 Dalavision Sensors</h2>
+    <p>Фирменные метеостанции и датчики влажности почвы от Dalavision обеспечивают точный контроль микроклимата в теплицах. Интеграция с платформой позволяет принимать своевременные агрономические решения.</p>
+  </div>
+</section>
+
+
+
+<section class="module" id="demo" style="padding: 4rem 1rem; text-align: center;">
+  <h2 style="margin-bottom: 1rem;">🧪 Демо и тестирование</h2>
+  <p style="font-size: 18px; margin-bottom: 2rem;">Симуляция работы Dalavision Crop и распознавания ягод:</p>
+  
+  <div style="max-width: 900px; margin: 0 auto; padding: 20px; background: #1e1e1e; border-radius: 24px; box-shadow: 0 8px 30px rgba(0,0,0,0.3); position: relative;">
+    <div style="width: 60px; height: 6px; background: #ccc; border-radius: 3px; margin: 0 auto 10px;"></div>
+    <div style="background: #000; border-radius: 12px; overflow: hidden;">
+
+    <iframe src="https://kasstal.github.io/dala-vision-web/" title="Dalavision Web Demo"
+      style="width:100%; height:520px; border:none; display:block;"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<section class="module" id="contact">
+  <h2>📞 Контакты</h2>
+  <p>Instagram: <a href="https://www.instagram.com/dala.vision/" target="_blank">@dala.vision</a><br/>
+     Телефон: <a href="tel:+77787885556">+7 778 788 5556</a><br/>
+     E-mail: info@dalavision.kz</p>
+</section>
+
+<footer>
+  &copy; 2025 DalaVision. Все права защищены.
+</footer>
+
+
+  <script>
+    const modules = document.querySelectorAll('.module');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    modules.forEach(module => observer.observe(module));
+  </script>
+</body>
+
+</html>
