@@ -1,142 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DalaVision — цифровой контроль урожая</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DalaVision</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-      background: #fff;
-      color: #000;
-      line-height: 1.6;
-    }
-    header {
-      padding: 4rem 1rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #333;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .intro-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      padding: 2rem 1rem;
-    }
-    .intro-text {
-      flex: 1 1 300px;
-      text-align: left;
-      max-width: 450px;
-    }
-    .intro-text h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .intro-text p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 1.5rem;
-    }
-    .intro-text a {
-      display: inline-block;
-      text-decoration: none;
-      color: #0056b3;
-      border: 1px solid #0056b3;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    .intro-text a:hover {
-      background: #0056b3;
-      color: #fff;
-    }
-    .intro-image {
-      flex: 1 1 350px;
-      text-align: center;
-    }
-    .intro-image img {
-      max-width: 100%;
-      width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-    section {
-      padding: 4rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    section p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 2rem;
-    }
-    .video-embed {
-      width: 100%;
-      max-width: 720px;
-      height: 405px;
-      margin: 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #111; }
+    header, footer { background: #fff; padding: 20px 40px; text-align: center; }
+    nav a { margin: 0 15px; text-decoration: none; color: #00784e; font-weight: bold; }
+    section { padding: 60px 40px; text-align: center; }
+    img { max-width: 100%; height: auto; border-radius: 12px; }
+    .module { max-width: 1000px; margin: 0 auto 60px; }
+    .module h2 { font-size: 28px; margin-bottom: 20px; }
+    .module p { font-size: 17px; color: #444; line-height: 1.6; }
+    .iframe-container iframe { width: 100%; height: 600px; border: none; margin-top: 30px; }
+    .video-link a { color: #00784e; font-weight: bold; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>DalaVision One</h1>
-    <p>Цифровой контроль урожая в реальном времени — с помощью ИИ, камер и собственных сенсоров</p>
-  </header>
-  <div class="intro-container">
-    <div class="intro-text">
-      <h2>Мониторинг в действии</h2>
-      <p>Вы можете загрузить фото и увидеть, как проходит его обработка системой DalaVision One.</p>
-      <a href="https://kasstal.github.io/dala-vision-web/" target="_blank">Смотреть демо (загрузка фото и обработка)</a>
-    </div>
-    <div class="intro-image">
-      <img src="Снимок экрана 2025-07-01 в 12.45.59.png" alt="Интерфейс DalaVision">
-    </div>
+
+<header>
+  <h1>DalaVision — Цифровая платформа для агроаналитики</h1>
+  <nav>
+    <a href="#crop">Crop</a>
+    <a href="#one">One</a>
+    <a href="#sensors">Sensors</a>
+    <a href="#demo">Демо</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+</header>
+
+<section class="module" id="one">
+  <h2>📷 Dalavision One</h2>
+  <img src="dalavision-one.png" alt="Dalavision One">
+  <p>AI-модуль анализа урожая. Система распознаёт зрелость ягод, недобор в крайних рядах и оценивает количество плодов по видео и фото с теплиц. Информация автоматически поступает в дашборд. <br/>
+  <span class="video-link"><a href="https://youtu.be/8tOP1jLWv90" target="_blank">Посмотреть как работает анализ видео →</a></span></p>
+</section>
+
+<section class="module" id="crop">
+  <h2>🌱 Dalavision Crop</h2>
+  <img src="dalavision-crop.png" alt="Dalavision Crop">
+  <p>Введите координаты участка — и получите список культур, которые можно посадить с учётом климата, pH почвы и уровня солнечного освещения (DLI).<br/>
+  Предоставляется подробный отчёт с рекомендациями и контактами ближайших поставщиков семян, саженцев и удобрений.</p>
+</section>
+
+<section class="module" id="sensors">
+  <h2>🌦 Dalavision Sensors</h2>
+  <img src="dalavision-sensors.png" alt="Dalavision Sensors">
+  <p>Комплекс метеостанций и почвенных датчиков для отслеживания температуры, влажности, света и других параметров. Интеграция с ботом и визуальным дашбордом.</p>
+</section>
+
+<section class="module" id="demo">
+  <h2>🧪 Демо и тестирование</h2>
+  <p>Опробуйте Dalavision Crop и распознавание ягод на демо-карте:</p>
+  <div class="iframe-container">
+    <iframe src="https://kasstal.github.io/dala-vision-web/" title="Dalavision Web Demo"></iframe>
   </div>
-  <section>
-    <h2>Что такое DalaVision?</h2>
-    <p>Это единая аналитическая платформа для теплиц и садов, которая прогнозирует урожай, выявляет риски и помогает агрономам и владельцам хозяйств принимать точные решения.</p>
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/8tOP1jLWv90" title="Видео о DalaVision" allowfullscreen></iframe>
-    </div>
-  </section>
-  <section>
-    <h2>Преимущества</h2>
-    <p>✔ Увеличение урожайности<br>✔ Снижение потерь<br>✔ Меньше ручного контроля<br>✔ Видимость в реальном времени</p>
-  </section>
-  <footer>
-    © 2025 DalaVision | www.dalavision.kz | +7 778 788 55 56
-  </footer>
+</section>
+
+<section class="module" id="contact">
+  <h2>📞 Контакты</h2>
+  <p>Instagram: <a href="https://www.instagram.com/dala.vision/" target="_blank">@dala.vision</a><br/>
+     Телефон: <a href="tel:+77787885556">+7 778 788 5556</a><br/>
+     E-mail: info@dalavision.kz</p>
+</section>
+
+<footer>
+  &copy; 2025 DalaVision. Все права защищены.
+</footer>
+
 </body>
 </html>
